@@ -197,10 +197,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="border: 1px solid black;">
-                                                    <t t-set="external_id" t-value="env['sale.id.external'].search([('product', '=', line.product_id.product_tmpl_id.id)], limit=1)"/>
-                                                    <span t-field="external_id.primary_id"/>
-                                                </td>
+                                                <td style="border: 1px solid black;"/>
                                                 <td style="border: 1px solid black;">
                                                     <span>H:
                                                         <span t-esc="line.product_id.height"/>
@@ -310,7 +307,7 @@
                                                             </span>
                                                         </td>
                                                     </t>
-                                                    <t t-if="o.req_dp_amount and 'OM Price' not in o.ket_request_dp">
+                                                    <t t-if="o.req_dp_amount and 'Internal Price' not in o.ket_request_dp">
                                                         <td></td>
                                                         <td style="text-align: right; border: 1px solid black; vertical-align: middle; white-space: nowrap;">
                                                             <span style="font-size: 12px; font-weight: bold">
@@ -330,7 +327,7 @@
                                                         <span style="font-size: 12px; font-weight: bold">Balance</span>
                                                     </td>
                                                     <td style="border-top: 1px solid black"></td>
-                                                    <t t-if="o.req_dp_amount and 'OM Price' not in o.ket_request_dp">
+                                                    <t t-if="o.req_dp_amount and 'Internal Price' not in o.ket_request_dp">
                                                         <td></td>
                                                         <td style="text-align: right; border: 1px solid black; vertical-align: middle; white-space: nowrap;">
                                                             <span style="font-size: 12px; font-weight: bold">

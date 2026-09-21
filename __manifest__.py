@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of om_sale_blanket_order_it. See LICENSE file for full copyright and licensing details.
+# Part of sale_blanket_order. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Sale Blanket Order - Backdating, Pricing & Pro Forma Reports',
     'version': '18.0.1.0.0',
@@ -31,8 +31,7 @@ that master order:
 * A family of **Pro Forma Invoice** and **Master SO (MTO)** PDF reports
   - with/without product photos, single-page or automatically paginated
   - built for the paperwork an export order actually needs (QR codes,
-  bank details, per-line dimensions in cm *and* inches, and customer
-  external IDs from the sibling ``sale_external_id`` module).
+  bank details, and per-line dimensions in cm *and* inches).
 
 Key features
 ------------
@@ -57,7 +56,7 @@ sales/production teams this module was built for.
     'website': 'https://github.com/yazid-bustomi',
     'maintainer': 'Akhmad Yazid Bustomi',
     'license': 'LGPL-3',
-    'depends': ['sale_blanket_order', 'account', 'stock', 'sale_external_id'],
+    'depends': ['sale_blanket_order', 'account', 'stock'],
     'external_dependencies': {
         'python': ['qrcode'],
     },

@@ -196,10 +196,7 @@
                                     </td>
                                 </tr>
                                 <tr style="page-break-after: avoid; page-break-inside: avoid;">
-                                    <td class="p-1 text-center" style="min-height: 35px; vertical-align: middle; text-align: center; page-break-inside: avoid; border-bottom: 1px solid #000;" colspan="2">
-                                        <t t-set="external_id" t-value="env['sale.id.external'].search([('product', '=', line.product_id.product_tmpl_id.id)], limit=1)"/>
-                                        <span style="font-size:11px; font-family: Arial; letter-spacing:0.15em;" t-field="external_id.primary_id"/>
-                                    </td>
+                                    <td class="p-1 text-center" style="min-height: 35px; vertical-align: middle; text-align: center; page-break-inside: avoid; border-bottom: 1px solid #000;" colspan="2"/>
                                 </tr>
                             </tbody>
                         </div>
@@ -247,12 +244,12 @@
         </template>
 
         <!-- "Final" Master SO report: same body, no Temporary block. -->
-        <template id="om_sale_blanket_order_it.report_mto_template">
+        <template id="sale_blanket_order.report_mto_template">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <t t-call="web.external_layout">
                         <t t-set="show_temporary_block" t-value="False"/>
-                        <t t-call="om_sale_blanket_order_it.report_mto_shared_body"/>
+                        <t t-call="sale_blanket_order.report_mto_shared_body"/>
                     </t>
                 </t>
             </t>

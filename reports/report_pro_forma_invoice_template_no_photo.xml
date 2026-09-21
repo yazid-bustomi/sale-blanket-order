@@ -111,14 +111,14 @@
                                             <strong>QTY</strong>
                                         </th>
                                         <th class="text-center" style="border: 1px solid white; vertical-align: middle; color: white" rowspan="2">
-                                            <strong>OM Price</strong>
+                                            <strong>Internal Price</strong>
                                         </th>
                                         <th class="text-center" style="border: 1px solid white; vertical-align: middle; color: white" rowspan="2">
                                             <strong>Cust Price</strong>
                                         </th>
                                         <th class="text-center" style="border: 1px solid white; vertical-align: middle; color: white;" rowspan="2">
                                             <strong>Total
-                                                <br/>OM Price
+                                                <br/>Internal Price
                                             </strong>
                                         </th>
                                         <th class="text-center" style="border: 1px solid white; vertical-align: middle; color: white;" rowspan="2">
@@ -202,12 +202,8 @@
                                             </tr>
                                             <!-- Row 3 -->
                                             <tr>
-                                                <td class="text-center" style="border: 1px solid black; vertical-align: middle;">
-                                                    <span t-field="line.external_id.primary_id"/>
-                                                </td>
-                                                <td class="text-center" style="border: 1px solid black; vertical-align: middle;">
-                                                    <span t-field="line.external_id.secondary_id"/>
-                                                </td>
+                                                <td class="text-center" style="border: 1px solid black; vertical-align: middle;"/>
+                                                <td class="text-center" style="border: 1px solid black; vertical-align: middle;"/>
                                                 <td class="text-left" style="border: 1px solid black; vertical-align: middle;">
                                                     <span>H:
                                                         <span t-esc="line.product_id.height"/>
@@ -288,7 +284,7 @@
                                                     </span>
                                                 </td>
                                             </t>
-                                            <t t-if="o.req_dp_amount and 'OM Price' not in o.ket_request_dp">
+                                            <t t-if="o.req_dp_amount and 'Internal Price' not in o.ket_request_dp">
                                                 <td colspan="3"></td>
                                                 <td style="text-align: right; border: 1px solid black; vertical-align: middle;">
                                                     <span style="font-size: 12px; font-weight: bold">
@@ -298,7 +294,7 @@
                                                 </td>
                                                 <td colspan="2"></td>
                                             </t>
-                                            <t t-if="o.req_dp_amount and 'OM Price' in o.ket_request_dp">
+                                            <t t-if="o.req_dp_amount and 'Internal Price' in o.ket_request_dp">
                                                 <td colspan="2"></td>
                                                 <td style="text-align: right; border: 1px solid black; vertical-align: middle;">
                                                     <span style="font-size: 12px; font-weight: bold">
@@ -326,7 +322,7 @@
                                                 <span style="font-size: 12px; font-weight: bold">Balance</span>
                                             </td>
                                             <td style="border-top: 1px solid black"></td>
-                                            <t t-if="o.req_dp_amount and 'OM Price' not in o.ket_request_dp">
+                                            <t t-if="o.req_dp_amount and 'Internal Price' not in o.ket_request_dp">
                                                 <td colspan="3"></td>
                                                 <td style="text-align: right; border: 1px solid black; vertical-align: middle;">
                                                     <span style="font-size: 12px; font-weight: bold">
@@ -336,7 +332,7 @@
                                                 </td>
                                                 <td colspan="2"></td>
                                             </t>
-                                            <t t-if="o.req_dp_amount and 'OM Price' in o.ket_request_dp">
+                                            <t t-if="o.req_dp_amount and 'Internal Price' in o.ket_request_dp">
                                                 <td colspan="2"></td>
                                                 <td style="text-align: right; border: 1px solid black; vertical-align: middle;">
                                                     <span style="font-size: 12px; font-weight: bold">

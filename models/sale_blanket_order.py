@@ -64,7 +64,7 @@ class SaleBlanketOrder(models.Model):
     )
 
     amount_total_sec_price = fields.Float(
-        string="Total OM Price",
+        string="Total Internal Price",
         compute='_compute_amount_total_sec_price',
         store=True
     )

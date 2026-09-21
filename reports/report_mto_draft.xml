@@ -5,12 +5,12 @@
              (see report_mpo.xml, which defines the shared body both
              templates render) except it also prints the "Temporary"
              production-notes block at the end. -->
-        <template id="om_sale_blanket_order_it.report_mto_draft_template">
+        <template id="sale_blanket_order.report_mto_draft_template">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <t t-call="web.external_layout">
                         <t t-set="show_temporary_block" t-value="True"/>
-                        <t t-call="om_sale_blanket_order_it.report_mto_shared_body"/>
+                        <t t-call="sale_blanket_order.report_mto_shared_body"/>
                     </t>
                 </t>
             </t>

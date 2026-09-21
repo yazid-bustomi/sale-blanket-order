@@ -20,8 +20,8 @@ human-readable, sequential document numbering scheme; the ability to
 enter paperwork after the fact but have it dated as if entered on time;
 a second, internal price basis for margin tracking; a down-payment
 workflow; and the specific paperwork (Pro Forma Invoice, Master SO/MTO)
-an export order actually needs, with QR codes, dimensions in both cm and
-inches, and the customer's own product codes.
+an export order actually needs, with QR codes and dimensions in both cm
+and inches.
 
 ## Features
 
@@ -32,14 +32,13 @@ inches, and the customer's own product codes.
   wizard accept a "Create BO"/"Create SO" date used for numbering and
   the stored order date, so paperwork entered late still reflects the
   real commercial date.
-- **Secondary ("OM") price** per line for internal margin tracking,
+- **Secondary ("Internal") price** per line for internal margin tracking,
   rolled up into its own order total alongside the customer-facing total.
 - **Request DP wizard**: compute a down payment as a percentage (of
   either price basis) or a fixed amount; the result is shown on the Pro
   Forma Invoice.
 - **Production fields** per line: Finish, Info to Buyer/Production,
-  Color/Attribute/Size, a subcontractor reference, and the customer's own
-  product code (via `sale_external_id`).
+  Color/Attribute/Size, and a subcontractor reference.
 - **Six PDF report variants**:
   - Pro Forma Invoice - single-page or auto-paginated, with or without a
     product photo per line.
@@ -55,20 +54,18 @@ inches, and the customer's own product codes.
   `sale-workflow` repository. This addon only extends it, it does not
   replace it.
 - Standard `account` and `stock` apps.
-- [`sale_external_id`](https://github.com/yazid-bustomi/sale-external-id) -
-  a sibling module by the same author, published separately in this
-  portfolio.
 - Python package [`qrcode`](https://pypi.org/project/qrcode/) (for the
   QR codes on the Master SO / MTO reports):
   ```bash
   pip install qrcode
   ```
 
+No other addon from this portfolio is required — this module only builds
+on the third-party OCA module above.
+
 ## Installation
 
-1. Install `sale_blanket_order` (OCA `sale-workflow`) and
-   [`sale_external_id`](https://github.com/yazid-bustomi/sale-external-id)
-   from this portfolio.
+1. Install `sale_blanket_order` from OCA `sale-workflow`.
 2. `pip install qrcode`.
 3. Copy this folder into your Odoo `addons` path:
    ```bash
@@ -82,13 +79,13 @@ inches, and the customer's own product codes.
 ## Usage
 
 1. Create a **Blanket Order** (**Sales > Orders > Blanket Orders**), fill
-   in the lines including **OM Price**, **Finish**, **Info to
+   in the lines including **Internal Price**, **Finish**, **Info to
    Buyer/Production**, etc.
 2. Set **Create BO** to the real commercial date if you are entering the
    order after the fact, then click **Confirm** - the order is renamed
    to `BO YY/MM/NNNNN` based on that date.
 3. Click **Request DP** in the header to open the down-payment wizard;
-   pick a percentage (of Price or OM Price) or a fixed amount and
+   pick a percentage (of Price or Internal Price) or a fixed amount and
    **Confirm** - the result appears in the **Request DP** field and on
    the Pro Forma Invoice.
 4. Use **Create Sale Order** as usual; the wizard now also asks for a
@@ -104,10 +101,10 @@ inches, and the customer's own product codes.
   details, logo) is pulled dynamically from `res.company` /
   `res.partner.bank` - no company data is hardcoded anywhere in this
   module.
-- One `<img>` in a confirmation dialog, in the sibling
-  `purchase_order` module, referenced a photo of an identifiable
-  person and was removed there (not part of this module) - see that
-  module's README.
+- A decorative photo of an identifiable person, embedded in a confirmation
+  dialog in a different module from this same author's portfolio, was
+  removed there as part of the same clean-up (not part of this module's
+  own code).
 
 ## Project structure
 

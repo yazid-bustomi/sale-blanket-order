@@ -6,13 +6,13 @@ from odoo.exceptions import UserError
 class RequestDPBlanketOrder(models.TransientModel):
     """Compute a down-payment request on a Blanket Order, either as a
     percentage of one of the two price bases (customer price or the
-    internal "OM Price") or as a fixed amount.
+    internal "Internal Price") or as a fixed amount.
 
     The result is stored as plain text in ``ket_request_dp`` (see
     ``sale_blanket_order.py``) rather than structured fields, because it
     is meant to be read verbatim on the Pro Forma Invoice report; the
     report templates parse that same text back out to render the DP/
-    Balance lines (see the reports for the "OM Price"/"%" substring
+    Balance lines (see the reports for the "Internal Price"/"%" substring
     checks that depend on the exact wording produced here).
     """
     _name = 'wizard.request.dp.blanket.order'
@@ -26,7 +26,7 @@ class RequestDPBlanketOrder(models.TransientModel):
 
     base_on = fields.Selection([
         ('price', 'Price'),
-        ('om_price', 'OM Price')
+        ('secondary_price', 'Internal Price')
     ], string='Harga Berdasarkan?')
 
     currency_id = fields.Many2one(
@@ -54,7 +54,7 @@ class RequestDPBlanketOrder(models.TransientModel):
 
     def action_confirm_dp(self):
         self.ensure_one()
-        text_base_on = "Price" if self.base_on == 'price' else "OM Price"
+        text_base_on = "Price" if self.base_on == 'price' else "Internal Price"
 
         if self.dp_type == 'percentage':
             if not self.base_on or self.percentage <= 0:

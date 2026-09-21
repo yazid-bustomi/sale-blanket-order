@@ -21,10 +21,10 @@
         <field name="name">Pro Forma Invoice - RH (With Photo)</field>
         <field name="model">sale.blanket.order</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">om_sale_blanket_order_it.report_pro_forma_invoice_template_with_photo</field>
-        <field name="report_file">om_sale_blanket_order_it.report_pro_forma_invoice_template_with_photo</field>
+        <field name="report_name">sale_blanket_order.report_pro_forma_invoice_template_with_photo</field>
+        <field name="report_file">sale_blanket_order.report_pro_forma_invoice_template_with_photo</field>
         <field name="print_report_name">'Pro Forma Invoice (With Photo) - %s' % object.name</field>
-        <field name="paperformat_id" ref="om_sale_blanket_order_it.paperformat_pro_forma_invoice"/>
+        <field name="paperformat_id" ref="sale_blanket_order.paperformat_pro_forma_invoice"/>
         <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
         <field name="binding_type">report</field>
     </record>
@@ -36,10 +36,10 @@
         <field name="name">Pro Forma Invoice - General (With Photo)</field>
         <field name="model">sale.blanket.order</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">om_sale_blanket_order_it.report_pro_forma_invoice_general_with_photo</field>
-        <field name="report_file">om_sale_blanket_order_it.report_pro_forma_invoice_general_with_photo</field>
+        <field name="report_name">sale_blanket_order.report_pro_forma_invoice_general_with_photo</field>
+        <field name="report_file">sale_blanket_order.report_pro_forma_invoice_general_with_photo</field>
         <field name="print_report_name">'Pro Forma Invoice - General (With Photo) - %s' % object.name</field>
-        <field name="paperformat_id" ref="om_sale_blanket_order_it.paperformat_pro_forma_invoice"/>
+        <field name="paperformat_id" ref="sale_blanket_order.paperformat_pro_forma_invoice"/>
         <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
         <field name="binding_type">report</field>
     </record>
@@ -49,10 +49,10 @@
         <field name="name">Pro Forma Invoice - General (No Photo)</field>
         <field name="model">sale.blanket.order</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">om_sale_blanket_order_it.report_pro_forma_invoice_general_no_photo</field>
-        <field name="report_file">om_sale_blanket_order_it.report_pro_forma_invoice_general_no_photo</field>
+        <field name="report_name">sale_blanket_order.report_pro_forma_invoice_general_no_photo</field>
+        <field name="report_file">sale_blanket_order.report_pro_forma_invoice_general_no_photo</field>
         <field name="print_report_name">'Pro Forma Invoice - General (No Photo) - %s' % object.name</field>
-        <field name="paperformat_id" ref="om_sale_blanket_order_it.paperformat_pro_forma_invoice"/>
+        <field name="paperformat_id" ref="sale_blanket_order.paperformat_pro_forma_invoice"/>
         <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
         <field name="binding_type">report</field>
     </record>
@@ -62,10 +62,10 @@
         <field name="name">Pro Forma Invoice - RH (No Photo)</field>
         <field name="model">sale.blanket.order</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">om_sale_blanket_order_it.report_pro_forma_invoice_template_no_photo</field>
-        <field name="report_file">om_sale_blanket_order_it.report_pro_forma_invoice_template_no_photo</field>
+        <field name="report_name">sale_blanket_order.report_pro_forma_invoice_template_no_photo</field>
+        <field name="report_file">sale_blanket_order.report_pro_forma_invoice_template_no_photo</field>
         <field name="print_report_name">'Pro Forma Invoice (No Photo) - %s' % object.name</field>
-        <field name="paperformat_id" ref="om_sale_blanket_order_it.paperformat_pro_forma_invoice"/>
+        <field name="paperformat_id" ref="sale_blanket_order.paperformat_pro_forma_invoice"/>
         <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
         <field name="binding_type">report</field>
     </record>
@@ -76,8 +76,8 @@
         <field name="name">Master SO Report</field>
         <field name="model">sale.blanket.order</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">om_sale_blanket_order_it.report_mto_template</field>
-        <field name="report_file">om_sale_blanket_order_it.report_mto_template</field>
+        <field name="report_name">sale_blanket_order.report_mto_template</field>
+        <field name="report_file">sale_blanket_order.report_mto_template</field>
         <field name="print_report_name">'MTO Report - %s' % object.name</field>
         <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
         <field name="binding_type">report</field>
@@ -88,8 +88,8 @@
         <field name="name">Master SO Report (Draft)</field>
         <field name="model">sale.blanket.order</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">om_sale_blanket_order_it.report_mto_draft_template</field>
-        <field name="report_file">om_sale_blanket_order_it.report_mto_draft_template</field>
+        <field name="report_name">sale_blanket_order.report_mto_draft_template</field>
+        <field name="report_file">sale_blanket_order.report_mto_draft_template</field>
         <field name="print_report_name">'MTO Report (Draft) - %s' % object.name</field>
         <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
         <field name="binding_type">report</field>

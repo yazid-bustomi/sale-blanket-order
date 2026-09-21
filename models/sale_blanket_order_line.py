@@ -4,8 +4,7 @@ from odoo import fields, models, api
 
 class SaleBlanketOrderLine(models.Model):
     """Add production/costing fields to a Blanket Order line: an internal
-    ("secondary") price, finish/production info, and a link back to the
-    customer's own product code (see sale_external_id).
+    ("secondary") price and finish/production info.
     """
     _inherit = 'sale.blanket.order.line'
 
@@ -40,20 +39,11 @@ class SaleBlanketOrderLine(models.Model):
         store=True,
     )
 
-    external_id = fields.Many2one(
-        'sale.id.external',
-        string="External ID",
-        help="Pilih ID External untuk produk ini",
-    )
-
-    # Note on naming: "OM Price" (also used verbatim in the reports and
-    # the Request DP wizard) is this business's own historical shorthand
-    # for an internal/secondary price basis, distinct from the
-    # customer-facing `price_unit`. It is not a customer-facing label, so
-    # it has been left as-is rather than guessed at and renamed - but see
-    # `sec_price`, the underlying field name, for its actual meaning.
+    # "Internal Price" (also used verbatim in the reports and the Request
+    # DP wizard) is the customer-facing label for this secondary/internal
+    # price basis; see `sec_price`, the underlying field name.
     sec_price = fields.Float(
-        string="OM Price",
+        string="Internal Price",
         help="Secondary/internal price basis, used for margin tracking "
              "and as an optional Down Payment base (see Request DP)."
     )
