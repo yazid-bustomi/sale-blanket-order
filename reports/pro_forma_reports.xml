@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Paper Format for Pro Forma Invoice -->
+    <record id="paperformat_pro_forma_invoice" model="report.paperformat">
+        <field name="name">Pro Forma Invoice</field>
+        <field name="default">False</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line">False</field>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Report with photo: single-page layout, one line item after
+         another - simplest to read for a short order. -->
+    <record id="action_report_pro_forma_invoice_with_photo" model="ir.actions.report">
+        <field name="name">Pro Forma Invoice - RH (With Photo)</field>
+        <field name="model">sale.blanket.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">om_sale_blanket_order_it.report_pro_forma_invoice_template_with_photo</field>
+        <field name="report_file">om_sale_blanket_order_it.report_pro_forma_invoice_template_with_photo</field>
+        <field name="print_report_name">'Pro Forma Invoice (With Photo) - %s' % object.name</field>
+        <field name="paperformat_id" ref="om_sale_blanket_order_it.paperformat_pro_forma_invoice"/>
+        <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Report General with photo: same content, but automatically
+         paginated (fewer lines on the first page to leave room for the
+         document header) - meant for orders with many lines. -->
+    <record id="action_report_pro_forma_invoice_general_with_photo" model="ir.actions.report">
+        <field name="name">Pro Forma Invoice - General (With Photo)</field>
+        <field name="model">sale.blanket.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">om_sale_blanket_order_it.report_pro_forma_invoice_general_with_photo</field>
+        <field name="report_file">om_sale_blanket_order_it.report_pro_forma_invoice_general_with_photo</field>
+        <field name="print_report_name">'Pro Forma Invoice - General (With Photo) - %s' % object.name</field>
+        <field name="paperformat_id" ref="om_sale_blanket_order_it.paperformat_pro_forma_invoice"/>
+        <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Report General no photo -->
+    <record id="action_report_pro_forma_invoice_general_no_photo" model="ir.actions.report">
+        <field name="name">Pro Forma Invoice - General (No Photo)</field>
+        <field name="model">sale.blanket.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">om_sale_blanket_order_it.report_pro_forma_invoice_general_no_photo</field>
+        <field name="report_file">om_sale_blanket_order_it.report_pro_forma_invoice_general_no_photo</field>
+        <field name="print_report_name">'Pro Forma Invoice - General (No Photo) - %s' % object.name</field>
+        <field name="paperformat_id" ref="om_sale_blanket_order_it.paperformat_pro_forma_invoice"/>
+        <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- report no photo -->
+    <record id="action_report_pro_forma_invoice_no_photo" model="ir.actions.report">
+        <field name="name">Pro Forma Invoice - RH (No Photo)</field>
+        <field name="model">sale.blanket.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">om_sale_blanket_order_it.report_pro_forma_invoice_template_no_photo</field>
+        <field name="report_file">om_sale_blanket_order_it.report_pro_forma_invoice_template_no_photo</field>
+        <field name="print_report_name">'Pro Forma Invoice (No Photo) - %s' % object.name</field>
+        <field name="paperformat_id" ref="om_sale_blanket_order_it.paperformat_pro_forma_invoice"/>
+        <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Master SO report: defined by report_mpo.xml, kept as the "final"
+         variant used once an order is confirmed. -->
+    <record id="action_report_mto" model="ir.actions.report">
+        <field name="name">Master SO Report</field>
+        <field name="model">sale.blanket.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">om_sale_blanket_order_it.report_mto_template</field>
+        <field name="report_file">om_sale_blanket_order_it.report_mto_template</field>
+        <field name="print_report_name">'MTO Report - %s' % object.name</field>
+        <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
+        <field name="binding_type">report</field>
+    </record>
+    <!-- Master SO report (Draft): same layout plus a "Temporary" block for
+         production notes, meant to be printed before the order is final. -->
+    <record id="action_report_mto_draft" model="ir.actions.report">
+        <field name="name">Master SO Report (Draft)</field>
+        <field name="model">sale.blanket.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">om_sale_blanket_order_it.report_mto_draft_template</field>
+        <field name="report_file">om_sale_blanket_order_it.report_mto_draft_template</field>
+        <field name="print_report_name">'MTO Report (Draft) - %s' % object.name</field>
+        <field name="binding_model_id" ref="sale_blanket_order.model_sale_blanket_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
