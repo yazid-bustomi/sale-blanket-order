@@ -5,7 +5,7 @@ from odoo import fields, models, api
 class SaleBlanketOrderLine(models.Model):
     """Add production/costing fields to a Blanket Order line: an internal
     ("secondary") price, finish/production info, and a link back to the
-    customer's own product code (see om_sale_external_id).
+    customer's own product code (see sale_external_id).
     """
     _inherit = 'sale.blanket.order.line'
 

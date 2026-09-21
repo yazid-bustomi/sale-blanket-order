@@ -32,7 +32,7 @@ that master order:
   - with/without product photos, single-page or automatically paginated
   - built for the paperwork an export order actually needs (QR codes,
   bank details, per-line dimensions in cm *and* inches, and customer
-  external IDs from the sibling ``om_sale_external_id`` module).
+  external IDs from the sibling ``sale_external_id`` module).
 
 Key features
 ------------
@@ -57,7 +57,7 @@ sales/production teams this module was built for.
     'website': 'https://github.com/yazid-bustomi',
     'maintainer': 'Akhmad Yazid Bustomi',
     'license': 'LGPL-3',
-    'depends': ['sale_blanket_order', 'account', 'stock', 'om_sale_external_id'],
+    'depends': ['sale_blanket_order', 'account', 'stock', 'sale_external_id'],
     'external_dependencies': {
         'python': ['qrcode'],
     },

@@ -39,7 +39,7 @@ inches, and the customer's own product codes.
   Forma Invoice.
 - **Production fields** per line: Finish, Info to Buyer/Production,
   Color/Attribute/Size, a subcontractor reference, and the customer's own
-  product code (via `om_sale_external_id`).
+  product code (via `sale_external_id`).
 - **Six PDF report variants**:
   - Pro Forma Invoice - single-page or auto-paginated, with or without a
     product photo per line.
@@ -55,7 +55,7 @@ inches, and the customer's own product codes.
   `sale-workflow` repository. This addon only extends it, it does not
   replace it.
 - Standard `account` and `stock` apps.
-- [`om_sale_external_id`](https://github.com/yazid-bustomi/om_sale_external_id) -
+- [`sale_external_id`](https://github.com/yazid-bustomi/sale-external-id) -
   a sibling module by the same author, published separately in this
   portfolio.
 - Python package [`qrcode`](https://pypi.org/project/qrcode/) (for the
@@ -66,12 +66,13 @@ inches, and the customer's own product codes.
 
 ## Installation
 
-1. Install `sale_blanket_order` from OCA `sale-workflow`, then
-   `om_sale_external_id` from this portfolio.
+1. Install `sale_blanket_order` (OCA `sale-workflow`) and
+   [`sale_external_id`](https://github.com/yazid-bustomi/sale-external-id)
+   from this portfolio.
 2. `pip install qrcode`.
 3. Copy this folder into your Odoo `addons` path:
    ```bash
-   cp -r om_sale_blanket_order_it /path/to/odoo/addons/
+   cp -r sale_blanket_order /path/to/odoo/addons/
    ```
 4. Restart the server and update the apps list
    (`Settings > Apps > Update Apps List`, with developer mode enabled).
@@ -104,14 +105,14 @@ inches, and the customer's own product codes.
   `res.partner.bank` - no company data is hardcoded anywhere in this
   module.
 - One `<img>` in a confirmation dialog, in the sibling
-  `om_purchase_order_it` module, referenced a photo of an identifiable
+  `purchase_order` module, referenced a photo of an identifiable
   person and was removed there (not part of this module) - see that
   module's README.
 
 ## Project structure
 
 ```
-om_sale_blanket_order_it/
+sale_blanket_order/
 ├── models/
 │   ├── product_finish.py          # product.finish master list
 │   ├── sale_blanket_order.py      # numbering, backdating, QR codes
